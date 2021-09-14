@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Trip;
 
 class CreateTripsTable extends Migration
 {
@@ -15,6 +16,10 @@ class CreateTripsTable extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
+            $table->string('destination', 50);
+            $table->string('transport', 25);
+            $table->text('description');
+            $table->decimal('price', 7, 2);
             $table->timestamps();
         });
     }

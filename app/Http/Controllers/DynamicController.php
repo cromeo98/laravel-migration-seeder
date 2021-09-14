@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\TripAgency;
+use App\Trip;
 
 class DynamicController extends Controller
 {
     public function homepage() {
 
-        $trips = TripAgency::all();
+        $trips = Trip::all();
 
         return view('home', compact('trips'));
     }
